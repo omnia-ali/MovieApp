@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="middel-card">
+    <div class="col-sm-12">
+      <div class="card" *ngIf="movie!==undefined">
+        <img class="card-img card-img-top" [src]="'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/'+movie.poster_path"
+          alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title }}</h5>
+
+          <!-- <button mat-icon-button *ngFor="let ratingId of [1,2,3,4,5,6,7,8,9,10];index as i" [id]="'star_'+i"
+          style="color:orange" [matTooltip]="ratingId.toString()" matTooltipPosition="above">
+          <mat-icon>
+            {{(movie.vote_average >= i + 1)? 'star': 'star_border'}}
+          </mat-icon>
+        </button> -->
+          <app-star-rating [starCount]=10 [rating]="movie.vote_average"></app-star-rating>
+          <p class="card-text">{{movie. overview }}</p>
+          <a href="#" class="btn btn-primary" routerLink="/Movies/List">Back to Movies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-recommendations [recommendations]="recommendations.results"></app-recommendations>
+</div>

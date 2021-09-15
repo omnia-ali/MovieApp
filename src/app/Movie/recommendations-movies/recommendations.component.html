@@ -1,0 +1,21 @@
+<div class="home-page">
+  <div class="container">
+    <div class="row  middel-card">
+      <ng-container *ngFor="let movie of recommendations |slice:0:6">
+        <div class="col-sm-6 col-md-4 col-lg-2">
+          <div class="card">
+            <img class="card-img card-img-top"
+              [src]="'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/'+movie.backdrop_path" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title | truncate : 12}}</h5>
+              <p class="card-text">{{movie. overview | truncate : 70 }}</p>
+              <a href="#" class="btn btn-primary" routerLink="/Movie/datails" [queryParams]="{id:movie.id}">Details</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+
+  </div>
+</div>

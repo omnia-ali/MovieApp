@@ -1,0 +1,40 @@
+<div class="home-page">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let movie of movies?.results">
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img class="card-img card-img-top" [src]="'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/'+movie.poster_path"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title | truncate :25}}</h5>
+              <p class="card-text">{{movie. overview | truncate :150 }}</p>
+              <a href="#" class="btn btn-primary" routerLink="/Movie/datails"
+                [queryParams]="{id:movie.id}">Details</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <!-- <nav aria-label="...">
+      <ul   class="pagination pagination-sm">
+        <li class="page-item " >
+          <a class="page-link" href="#" tabindex="-1">{{index}</a>
+        </li>
+      </ul>
+    </nav>-->
+    <!-- <ul class="pagination">
+      <li class="page-item"><a (click)="prevIndex(this.movies.total_pages)" class="page-link" href="#">Previous</a></li>
+      <li class="page-item" *ngFor="let i of getArrayLenght(this.movies.total_pages) let n = index">
+        <a class="page-link"  (click)="getIndex(n)" >{{n+1}}</a>
+        </li>
+      <li class="page-item"><a class="page-link" (click)="nextIndex(this.movies.total_pages)" href="#">Next</a></li>
+    </ul> -->
+
+    <mat-paginator showFirstLastButtons *ngIf="this.movies!==undefined" [length]="this.movies.total_pages"
+      [pageSize]=" this.movies.total_results /this.movies.total_pages | number: '1.0-0'" (page)="pageChanged($event) ">
+    </mat-paginator>
+
+  </div>
+</div>

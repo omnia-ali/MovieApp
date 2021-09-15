@@ -1,0 +1,9 @@
+<button mat-icon-button  *ngFor="let ratingId of  [].constructor(10);index as i" [id]="'star_'+i"  class="star"
+  (click)="onClick(i+1)" [matTooltip]="(ratingId+1).toString()" matTooltipPosition="above">
+  <mat-icon>
+    {{showIcon(i)}}
+  </mat-icon>
+</button>
+<p class="body-2">
+  Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>
+</p>
