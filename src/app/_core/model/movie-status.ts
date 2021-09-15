@@ -1,7 +1,6 @@
 export enum MovieStatus {
-  popular = 'Popular'  as any ,
-
-  nowPlaying = 'Now Playing'  as any,
-  topRated = 'Top Rated'  as any,
-  upComing = 'Upcoming'  as any
+  "popular" = 'Popular',
+  "now_playing" = 'Now Playing',
+  "top_rated" = 'Top Rated',
+  "upcoming" = 'UpComing'
 }

@@ -11,27 +11,21 @@
           <a class="nav-link" routerLinkActive routerLink="/">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" routerLinkActive routerLink="Tvshow/List" data-bs-toggle="dropdown">
+          <a class="nav-link  dropdown-toggle" routerLinkActive routerLink="/Tvshow/List" data-bs-toggle="dropdown">
             Tv Shows </a>
           <ul class="dropdown-menu">
-
-            <!-- <li *ngFor="let enum of TvStatus | keyvalue: asIsOrder"><a class="dropdown-item" [routerLink]="['Movies/List', enum.key]"
-            routerLinkActive="router-link-active">{{ enum.value }}</a></li> -->
-            <li *ngFor="let enum of TvStatus | keyvalue: asIsOrder"><a class="dropdown-item" [routerLink]="['Movies/List', enum.key]"
-              routerLinkActive="router-link-active">{{ enum.value }}</a></li>
-
-
+            <li *ngFor="let enum of TvStatus | keyvalue: asIsOrder"><a class="dropdown-item"
+                [routerLink]="['/Tvshow/List', enum.key]" routerLinkActive="router-link-active">{{ enum.value }}</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" routerLinkActive routerLink="Movies/List" data-bs-toggle="dropdown">
+          <a class="nav-link  dropdown-toggle" routerLinkActive routerLink="/Movies/List" data-bs-toggle="dropdown">
             Movies </a>
           <ul class="dropdown-menu">
-            <!-- <li *ngFor="let enum of MovieStatus | keyvalue : asIsOrder"><a class="dropdown-item" [routerLink]="['Movies/List', enum.key]"
-              routerLinkActive="router-link-active">{{ enum.value }}</a></li> -->
-              <li *ngFor="let enum of MovieStatus | keyvalue : asIsOrder"><a class="dropdown-item" [routerLink]="['Movies/List', enum.key]"
-                routerLinkActive="router-link-active">{{ enum.value }}</a></li>
-  </ul>
+            <li *ngFor="let enum of MovieStatus | keyvalue : asIsOrder"><a class="dropdown-item"
+                [routerLink]="['/Movies/List',enum.key]" routerLinkActive="router-link-active">{{ enum.value }}</a></li>
+          </ul>
         </li>
       </ul>
     </div>

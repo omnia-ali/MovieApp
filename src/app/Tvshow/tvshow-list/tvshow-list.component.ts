@@ -3,7 +3,7 @@ import { TvshowService } from './../../_core/services/tvshow.service';
 import { PageEvent } from '@angular/material/paginator';
 import { Component, OnInit } from '@angular/core';
 import { Tvshow } from 'src/app/_core/model/tvshow.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tvshow-list',
@@ -12,17 +12,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TvshowListComponent implements OnInit {
 
-  constructor(private TvshowService: TvshowService, private route: ActivatedRoute) { }
+  constructor(private TvshowService: TvshowService, private route: ActivatedRoute,private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+ this.GetType();
+    this.GetPaged(1);
+  }
   shows: PaginatedResult<Tvshow[]>;
   type: string;
   ngOnInit(): void {
+
+  }
+  GetType() {
     this.route.params.subscribe(params => {
       this.type = params['type'] != null ? params['type'] : null;
     });
-    this.GetPaged(1);
   }
   GetPaged(pageNumber: number) {
-    this.TvshowService.getList(pageNumber).subscribe(data => {
+    this.TvshowService.getGenericList(this.type,pageNumber).subscribe(data => {
       this.shows = data;
       console.log(this.shows);
     });

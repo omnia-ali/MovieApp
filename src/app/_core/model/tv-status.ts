@@ -1,7 +1,7 @@
 export enum TvStatus {
-  Popular = "Popular",
-  NowPlaying = "Airing Today",
-  onTheAir = "on TV",
-  topRated = "Top Rated"
+  "popular" = "Popular",
+  "airing_today" = "Airing Today",
+  "on_the_air" = "on TV",
+  "top_rated" = "Top Rated"
 }
 

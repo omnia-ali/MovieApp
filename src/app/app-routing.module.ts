@@ -21,34 +21,36 @@ const routes: Routes = [
     path: "register"
     , component: RegisterComponent
   },
-  {
-    path: "Movies/List"
-    , component: MovieListComponent
-  },
-  {
+   {
     path: "Movies/List/:type"
     , component: MovieListComponent
   },
   {
+    path: "Movies/List"
+    , component: MovieListComponent  },
+
+  {
     path: "Movie/datails"
     , component: MovieDetailsComponent
+  },
+   {
+    path: "Tvshow/List/:type"
+    , component: TvshowListComponent
   },
   {
     path: "Tvshow/List"
     , component: TvshowListComponent
   },
-  {
-    path: "Tvshow/List/:type"
-    , component: MovieListComponent
-  },
+
   {
     path: "Tvshow/details"
     , component: TvshowDetailsComponent
   }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

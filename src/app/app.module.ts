@@ -47,6 +47,7 @@ import { RecommendationsShowsComponent } from './Tvshow/recommendations-shows/re
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
     HttpClientModule,
     BrowserAnimationsModule,
 MatButtonModule,
